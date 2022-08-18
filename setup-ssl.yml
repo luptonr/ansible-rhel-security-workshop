@@ -123,7 +123,7 @@
       state: restarted
       enabled: True    
 
-
+---
   - name: Configure SSL for apache
   hosts: "{{ apache_host }}"
   gather_facts: False
@@ -131,7 +131,8 @@
   tags: 
   - apache
   become: True
-  tasks:
+ 
+ tasks:
   - name: Create a file with the contents of the ca cert generated on the mariaDB host
     ansible.builtin.copy:
       content: "{{ hostvars[mariadb_host]['cacert_contents'] }}"
