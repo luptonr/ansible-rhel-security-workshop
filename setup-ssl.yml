@@ -123,7 +123,7 @@
       state: restarted
       enabled: True    
 
----
+
   - name: Configure SSL for apache
   hosts: "{{ apache_host }}"
   gather_facts: False
