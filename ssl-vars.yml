@@ -1,0 +1,8 @@
+---
+- name: Configure SSL on mysql
+  hosts: "{{ mariadb_host }}"
+  gather_facts: False
+  vars_files: vars/ssl-vars.yml
+  tags: 
+  - mysql
+  become: True
